@@ -48,5 +48,15 @@ class Student
     student = self.new(row[1], row[2], row[0])
     student
   end
+  
+  ef update
+    sql = <<-SQL
+      UPDATE students
+      SET name = ?, grade = ?
+      WHERE id = ?
+      SQL
+
+      DB[:conn].execute(sql, self.name, self.grade, self.id)
+  end
 
 end
