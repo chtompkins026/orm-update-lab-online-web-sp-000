@@ -60,7 +60,7 @@ class Student
       DB[:conn].execute(sql, self.name, self.grade, self.id)
   end
   
-def self.find_by_name(name)
+  def self.find_by_name(name)
     sql = <<-SQL
       SELECT *
       FROM students
